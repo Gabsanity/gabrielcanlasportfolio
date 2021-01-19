@@ -1,0 +1,447 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: PopLight;
+  src: url("./fonts/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: PopRegular;
+  src: url("./fonts/Poppins-Regular.ttf");
+}
+
+body {
+  font-family: PopLight;
+}
+
+.portfolio {
+  color: white;
+  background: radial-gradient(rgba(42, 55, 96, 1), rgba(11, 16, 35, 1));
+}
+
+nav {
+  min-height: 10vh;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0rem;
+}
+
+.logo {
+  font-size: 2rem;
+}
+.page {
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 5% 1fr 1fr 1fr 5%;
+}
+
+.teacher,
+.videoeditor {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero a {
+  display: flex;
+}
+
+.hero {
+  overflow: hidden;
+  height: 50rem;
+  align-self: center;
+  justify-content: center;
+  display: flex;
+}
+
+.hero img {
+  height: 50rem;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.gabright {
+  transform: translate(0%, 10%);
+}
+
+.gableft {
+  transform: translate(0%, -10%);
+}
+
+.hero:hover .gabright {
+  transform: translate(0%, 0%);
+}
+
+.hero:hover .gableft {
+  transform: translate(0%, 0%);
+}
+
+.details {
+  grid-column: 2/3;
+  align-self: flex-end;
+}
+
+.details h1 {
+  font-size: 5.4rem;
+  font-family: PopRegular;
+}
+
+.details h2 {
+  font-size: 3.2rem;
+  padding: 2rem 0rem;
+}
+
+.details p {
+  font-size: 2.4rem;
+  padding: 2rem 0rem 5rem 0rem;
+}
+
+.pages {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pages > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pages h3 {
+  font-size: 2.4rem;
+  padding: 3rem;
+}
+
+.pages svg {
+  cursor: pointer;
+  opacity: 0.5;
+  transform: scale(2);
+}
+
+.pages svg:hover {
+  animation: dot 0.5s ease-in-out infinite alternate;
+}
+
+.pages svg.active {
+  opacity: 1;
+}
+
+@keyframes dot {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(4);
+  }
+}
+
+.banner {
+  height: 50vh;
+  width: 100%;
+  position: relative;
+}
+.banner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.author {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.author h1 {
+  font-size: 4.2rem;
+}
+
+.author h3 {
+  padding: 1rem 0rem;
+  font-size: 3.2rem;
+}
+
+.story,
+.my-work {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  padding: 8rem 0rem;
+}
+
+.story-description,
+.work-description {
+  width: 50%;
+}
+
+.story-description h3,
+.work-description h3 {
+  font-size: 4.6rem;
+  padding-bottom: 3rem;
+}
+
+.story-description,
+.work-description p {
+  padding: 2rem 0rem;
+  font-size: 2rem;
+}
+
+.work-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 20rem);
+}
+
+.work-gallery img {
+  width: 100%;
+}
+
+/* 1024 px */
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 35.6%;
+  }
+  .page {
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-rows: 2fr 1fr;
+    align-items: center;
+  }
+  .hero {
+    grid-column: 2/3;
+    height: auto;
+  }
+
+  .hero img {
+    height: 80.8rem;
+  }
+
+  .details {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    text-align: center;
+  }
+
+  .details h1 {
+    font-size: 7.8rem;
+  }
+
+  .details h2 {
+    font-size: 6.8rem;
+  }
+
+  .story,
+  .my-work {
+    margin: auto;
+    flex-direction: column;
+  }
+
+  .story-description,
+  .work-description {
+    margin: auto;
+    width: 100%;
+  }
+
+  .work-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(2.5rem, 1fr));
+  }
+
+  .profile {
+    margin: auto;
+    padding-top: 5rem;
+    text-align: center;
+  }
+}
+/* 1024 px */
+
+/* 768 px */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 25.6%;
+  }
+  .page {
+    grid-template-columns: 5% 2fr 5%;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+  }
+  .hero {
+    grid-column: 2/3;
+    height: auto;
+  }
+
+  .hero img {
+    height: 80.8rem;
+  }
+
+  .details {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    text-align: center;
+  }
+
+  .details h1 {
+    font-size: 6.8rem;
+  }
+
+  .details h2 {
+    font-size: 5.8rem;
+  }
+
+  .story,
+  .my-work {
+    margin: auto;
+    flex-direction: column;
+  }
+
+  .story-description,
+  .work-description {
+    margin: auto;
+    width: 100%;
+  }
+
+  .work-gallery {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+  .profile {
+    margin: auto;
+    padding-top: 5rem;
+    text-align: center;
+  }
+}
+
+/* 768 px */
+
+/* 415 px */
+
+@media (max-width: 415px) {
+  html {
+    font-size: 24.6%;
+  }
+  .pages {
+    grid-template-columns: 5% 2fr 5%;
+    grid-template-rows: 3fr 2fr;
+    align-items: center;
+  }
+  .hero {
+    grid-column: 2/3;
+    height: auto;
+  }
+
+  .hero img {
+    height: 20rem;
+  }
+
+  .details {
+    margin: auto;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    text-align: center;
+  }
+
+  .details h1 {
+    font-size: 3.8rem;
+  }
+
+  .details h2 {
+    font-size: 2.8rem;
+  }
+
+  .story,
+  .my-work {
+    flex-direction: column;
+  }
+
+  .story-description,
+  .work-description {
+    margin: auto;
+    width: 100%;
+  }
+
+  .work-gallery {
+    align-items: center;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+
+  .profile {
+    margin: auto;
+    padding-top: 5rem;
+    text-align: center;
+  }
+
+  .hero img {
+    height: 60.5rem;
+  }
+
+  .profile img {
+    width: 70%;
+  }
+}
+
+/* 415 px */
+
+/* nav section */
+.nav-open {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  width: 100%;
+  height: 50vh;
+  background: white;
+  z-index: 1;
+  color: black;
+  display: grid;
+  grid-template-columns: 5% 1fr 1fr 5%;
+  justify-items: center;
+  align-items: center;
+  transform: translateY(-100%);
+  text-align: center;
+}
+
+.contact {
+  grid-column: 2/3;
+}
+.nav-open h3 {
+  font-size: 2.8rem;
+  padding-bottom: 4rem;
+}
+.nav-open p {
+  font-size: 2.6rem;
+}
+.social-links img {
+  padding: 0.2rem 2rem;
+}
+
+.logo,
+.menu {
+  z-index: 2;
+}
+.menu {
+  cursor: pointer;
+}
